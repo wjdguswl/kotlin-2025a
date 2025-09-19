@@ -29,7 +29,25 @@ class MainActivity : ComponentActivity() {
         }
         week02Variables()
         week02Functions()
+        week03classes()
     }
+}
+
+private fun week03classes(){
+    println("== Kotlin Classes ==")
+
+    class Student{
+        var name: String = ""
+        var age: Int = 0
+
+        fun introduce(){
+            println("HI, I'm $name and I'm $age years old")
+        }
+    }
+    var student = Student()
+    student.name = "Mirae"
+    student.age = 21
+    student.introduce()
 }
 
 private fun week02Functions(){
