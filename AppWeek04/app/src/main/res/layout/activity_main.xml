@@ -24,10 +24,10 @@
         android:text="인사 앱" />
 
     <Button
-        android:id="@+id/buttonCounter"
+        android:id="@+id/buttonColor"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="카운터 앱" />
+        android:text="색깔 변경 앱"
+        android:layout_marginBottom="16dp"/>
 
 </LinearLayout>
