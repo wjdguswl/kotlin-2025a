@@ -6,7 +6,7 @@
     android:padding="16dp"
     android:background="#f5f5f5">
 
-    <!-- Title -->
+    <!-- Title(화면 상단 제목 텍스트) -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,13 +17,14 @@
         android:gravity="center"
         android:layout_marginBottom="16dp" />
 
-    <!-- Input section -->
+    <!-- Input section(학생 이름 입력 + 추가 버튼) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="8dp">
 
+        <!-- 학생 이름 입력 -->
         <EditText
             android:id="@+id/editTextStudent"
             android:layout_width="0dp"
@@ -36,6 +37,7 @@
             android:textSize="16sp"
             android:layout_marginEnd="8dp" />
 
+        <!-- 학생 추가 버튼 -->
         <Button
             android:id="@+id/buttonAdd"
             android:layout_width="wrap_content"
@@ -48,13 +50,14 @@
 
     </LinearLayout>
 
-    <!-- Control buttons -->
+    <!-- Control buttons(학생 전체 삭제 버튼 + 학생 수 표시) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="16dp">
 
+        <!-- 학생 전체 삭제 버튼 -->
         <Button
             android:id="@+id/buttonClear"
             android:layout_width="0dp"
@@ -66,6 +69,7 @@
             android:textColor="#FFFFFF"
             android:layout_marginEnd="8dp" />
 
+        <!-- 총 학생 수 표시 -->
         <TextView
             android:id="@+id/textViewCount"
             android:layout_width="0dp"
@@ -82,7 +86,7 @@
 
     </LinearLayout>
 
-    <!-- Instructions -->
+    <!-- Instructions(앱 사용법 안내 텍스트) -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -93,7 +97,7 @@
         android:gravity="center"
         android:layout_marginBottom="8dp" />
 
-    <!-- ListView -->
+    <!-- ListView(학생 목록 표시) -->
     <ListView
         android:id="@+id/listViewStudents"
         android:layout_width="match_parent"
@@ -105,7 +109,7 @@
         android:choiceMode="singleChoice"
         android:listSelector="#E3F2FD" />
 
-    <!-- Footer info -->
+    <!-- Footer info(화면 하단 간단한 정보 표시) -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

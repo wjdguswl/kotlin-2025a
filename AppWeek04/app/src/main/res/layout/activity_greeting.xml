@@ -6,6 +6,7 @@
     android:padding="16dp"
     android:gravity="center">
 
+    <!-- 타이틀 텍스트 -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,6 +15,7 @@
         android:textStyle="bold"
         android:layout_marginBottom="32dp"/>
 
+    <!-- 사용자 이름을 입력받는 입력창 -->
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
@@ -22,6 +24,7 @@
         android:padding="12dp"
         android:minHeight="48dp"/>
 
+    <!-- 클릭하면 인사 메시지를 보여주는 버튼 -->
     <Button
         android:id="@+id/buttonGreet"
         android:text="인사하기"
@@ -31,6 +34,7 @@
         android:padding="12dp"
         android:minHeight="48dp"/>
 
+    <!-- 인사 메시지를 표시할 텍스트뷰 -->
     <TextView
         android:id="@+id/textViewGreeting"
         android:layout_width="wrap_content"

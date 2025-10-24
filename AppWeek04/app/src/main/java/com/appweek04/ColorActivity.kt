@@ -21,8 +21,8 @@ class ColorActivity : AppCompatActivity() {
         val buttonReset = findViewById<Button>(R.id.buttonReset)
 
         // 공통 함수: 배경 변경 + UI 업데이트 + 로그
-        fun changeBackground(color: Int, colorName: String) {
-            layoutMain.setBackgroundColor(color)
+        fun changeBackground(color: Int, colorName: String) { // color → 실제 색상 값, colorName → 문자열 이름
+            layoutMain.setBackgroundColor(color) // 화면 배경 색 변경
             textViewCurrentColor.text = "현재 색: $colorName"
             Log.d("KotlinWeek04App", "현재 색 $colorName")
         }

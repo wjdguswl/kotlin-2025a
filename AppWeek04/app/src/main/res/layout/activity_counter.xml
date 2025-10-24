@@ -24,26 +24,27 @@
         android:textStyle="bold"
         android:layout_marginBottom="32dp"/>
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginBottom="16dp">
-    <Button
-        android:id="@+id/buttonMinus"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:text="-"
-        android:textSize="24sp"
-        android:layout_margin="8dp"/>
-    <Button
-        android:id="@+id/buttonPlus"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:text="+"
-        android:textSize="24sp"
-        android:layout_margin="8dp"/>
-</LinearLayout>
+    <!-- 버튼들을 담는 가로 LinearLayout -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+        <Button
+            android:id="@+id/buttonMinus"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="-"
+            android:textSize="24sp"
+            android:layout_margin="8dp"/>
+        <Button
+            android:id="@+id/buttonPlus"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="+"
+            android:textSize="24sp"
+            android:layout_margin="8dp"/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonReset"

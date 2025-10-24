@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // 버튼 뷰 가져오기
         val buttonGreet = findViewById<Button>(R.id.buttonGreet)
         val buttonColor = findViewById<Button>(R.id.buttonColor)
         val buttonCount = findViewById<Button>(R.id.buttonCounter)

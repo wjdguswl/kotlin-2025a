@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
+<!-- 앱의 구성과 권한, 액티비티 등을 정의하는 가장 중요한 파일 -->
 
     <application
         android:allowBackup="true"

@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 class GreetingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_greeting)
+        setContentView(R.layout.activity_greeting) // 레이아웃을 activity_greeting.xml로 설정
 
         val editTextName = findViewById<EditText>(R.id.editTextName)
         val buttonGreet = findViewById<Button>(R.id.buttonGreet)
@@ -26,6 +26,7 @@ class GreetingActivity : AppCompatActivity() {
             }else{
                 greeting = "이름을 입력해주세요"
             }
+
             textViewGreeting.text = greeting
             textViewGreeting.visibility = View.VISIBLE
             Log.d("KotlinWeek04App", greeting)

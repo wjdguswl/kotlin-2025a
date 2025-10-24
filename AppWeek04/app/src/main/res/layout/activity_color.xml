@@ -24,6 +24,7 @@
         android:textSize="18sp"
         android:layout_marginBottom="32dp"/>
 
+    <!-- 버튼들을 담는 가로 LinearLayout -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,7 +54,6 @@
             android:text="파랑"
             android:backgroundTint="#0000FF"
             android:layout_margin="4dp"/>
-
     </LinearLayout>
 
     <Button
