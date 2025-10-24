@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: ArrayAdapter<String>
 
     companion object{
-        private const val TAG = "KotlinWeek06App"
+        private const val TAG = "KotlinWeek05App"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
