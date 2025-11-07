@@ -10,7 +10,7 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Title -->
+        <!-- Title(화면 상단 타이틀) -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
             android:gravity="center"
             android:layout_marginBottom="20dp" />
 
-        <!-- Mode Selection -->
+        <!-- Mode Selection(Select Mode 라벨) -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,6 +31,7 @@
             android:textColor="#34495e"
             android:layout_marginBottom="8dp" />
 
+        <!-- 라디오 버튼 배치 -->
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"
@@ -71,7 +72,7 @@
 
         </RadioGroup>
 
-        <!-- Main Input Section -->
+        <!-- Main Input Section(기본 입력 + ADD 버튼) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -103,7 +104,7 @@
         </LinearLayout>
 
 
-        <!-- Shopping Cart Controls (Initially Hidden) -->
+        <!-- 쇼핑 카트용 입력 (초기엔 숨김) -->
         <LinearLayout
             android:id="@+id/layoutCartControls"
             android:layout_width="match_parent"
@@ -138,7 +139,7 @@
 
         </LinearLayout>
 
-        <!-- Task Manager Controls (Initially Hidden) -->
+        <!-- 작업(Task) 모드 입력 (초기 숨김) -->
         <LinearLayout
             android:id="@+id/layoutTaskControls"
             android:layout_width="match_parent"
@@ -185,7 +186,7 @@
         </LinearLayout>
 
 
-        <!-- Control Buttons -->
+        <!-- Control Buttons(CLEAR 버튼 + 총합 표시) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -220,7 +221,7 @@
 
         </LinearLayout>
 
-        <!-- Instructions -->
+        <!-- Instructions(안내 문구) -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -244,7 +245,7 @@
             android:padding="8dp"
             android:elevation="2dp" />
 
-        <!-- Mode-specific Help Text -->
+        <!-- Mode-specific Help Text(모드별 도움말) -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

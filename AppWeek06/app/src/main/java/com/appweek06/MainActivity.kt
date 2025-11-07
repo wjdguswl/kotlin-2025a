@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         setupListeners()
 
         // Set initial mode
-        setMode(AppMode.STUDENT_LIST)
+        setMode(AppMode.STUDENT_LIST) // 초기 모드 실행
         addInitialData()
     }
 
@@ -103,19 +103,19 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "Views initialized")
     }
 
+    private fun setupPrioritySpinner() {
+        val priorities = TaskPriority.values().map { it.displayName }
+        val priorityAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, priorities)
+        priorityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerPriority.adapter = priorityAdapter
+    }
+
     private fun setupAdapters() {
         studentAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, studentList)
         cartAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, cartItemList)
         taskAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, taskList)
 
         Log.d(TAG, "Adapters setup completed")
-    }
-
-    private fun setupPrioritySpinner() {
-        val priorities = TaskPriority.values().map { it.displayName }
-        val priorityAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, priorities)
-        priorityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerPriority.adapter = priorityAdapter
     }
 
     private fun setupListeners() {
@@ -220,29 +220,29 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        val price = priceText.toDoubleOrNull() ?: run {
+        val price = priceText.toDoubleOrNull() ?: run { // 가격 숫자로 변환 실패 시
             showToast("Invalid price format")
             return
         }
 
-        val quantity = if (quantityText.isEmpty()) 1 else {
-            quantityText.toIntOrNull() ?: run {
+        val quantity = if (quantityText.isEmpty()) 1 else { // 수량이 비어있으면 기본 1로 설정
+            quantityText.toIntOrNull() ?: run { // 수량 숫자로 변환 실패 시
                 showToast("Invalid quantity format")
                 return
             }
         }
 
-        if (price < 0 || quantity <= 0) {
+        if (price < 0 || quantity <= 0) { // 음수 입력 방지
             showToast("Price and quantity must be positive")
             return
         }
 
-        val existingItem = cartItemList.find { it.name == name }
-        if (existingItem != null) {
+        val existingItem = cartItemList.find { it.name == name } // 같은 이름 있는지
+        if (existingItem != null) { // 있으면 수량만 증가
             existingItem.quantity += quantity
             cartAdapter.notifyDataSetChanged()
             showToast("Updated quantity for: $name")
-        } else {
+        } else { // 새 아이템이면 추가
             val cartItem = CartItem(name, quantity, price)
             cartItemList.add(cartItem)
             cartAdapter.notifyDataSetChanged()
@@ -262,10 +262,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun addTask(title: String) {
         val description = editTextDescription.text.toString().trim()
-        val priorityIndex = spinnerPriority.selectedItemPosition
+        val priorityIndex = spinnerPriority.selectedItemPosition // 선택된 인덱스 가져옴
         val priority = TaskPriority.values()[priorityIndex]
 
-        val task = Task(title, description, false, priority)
+        val task = Task(title, description, false, priority) // Task 객체 생성
         taskList.add(task)
         taskAdapter.notifyDataSetChanged()
 
@@ -274,7 +274,7 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "Added task: $title with priority: ${priority.displayName}")
     }
 
-    private fun clearAll() {
+    private fun clearAll() { // 현재 선택된 모드의 모든 항목을 한 번에 삭제(초기화)
         when (currentMode) {
             AppMode.STUDENT_LIST -> {
                 val count = studentList.size
@@ -302,7 +302,7 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "Cleared all items in mode: ${currentMode.displayName}")
     }
 
-    private fun handleItemClick(position: Int) {
+    private fun handleItemClick(position: Int) { // 리스트 항목 클릭 시 모드별 행동 처리
         when (currentMode) {
             AppMode.STUDENT_LIST -> {
                 val student = studentList[position]
@@ -359,6 +359,7 @@ class MainActivity : AppCompatActivity() {
         updateInfoDisplay()
     }
 
+    // 장바구니 항목의 상세 정보를 포맷해서 다이얼로그로 표시
     private fun showItemDetailsDialog(item: CartItem) {
         val message = """
             Item: ${item.name}
@@ -409,6 +410,7 @@ class MainActivity : AppCompatActivity() {
         textViewInfo.text = "Tasks: $pending pending, $completed completed | High Priority: $highPriority"
     }
 
+    // 앱 시작 시 샘플 데이터로 리스트 채움(테스트/데모용)
     private fun addInitialData() {
         // Add initial students
         studentList.addAll(listOf(
@@ -437,7 +439,7 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "Initial data added to all modes")
     }
 
-    private fun showToast(message: String) {
+    private fun showToast(message: String) { // 재사용성을 위해 함수로 분리
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
